@@ -1,22 +1,22 @@
-#установка и подключение библиотек
+#ГіГ±ГІГ Г­Г®ГўГЄГ  ГЁ ГЇГ®Г¤ГЄГ«ГѕГ·ГҐГ­ГЁГҐ ГЎГЁГЎГ«ГЁГ®ГІГҐГЄ
 install.packages("ggplot2") 
 install.packages("ggthemes") 
 library(ggplot2)
 library(ggthemes)
 
-data(InsectSprays) #встроенный набор данных
-dataframe <- InsectSprays #создали датафрейм со встроенным набором данных
-#создание графика со значениями датафрейма
+data(InsectSprays) #ГўГ±ГІГ°Г®ГҐГ­Г­Г»Г© Г­Г ГЎГ®Г° Г¤Г Г­Г­Г»Гµ
+dataframe <- InsectSprays #Г±Г®Г§Г¤Г Г«ГЁ Г¤Г ГІГ ГґГ°ГҐГ©Г¬ Г±Г® ГўГ±ГІГ°Г®ГҐГ­Г­Г»Г¬ Г­Г ГЎГ®Г°Г®Г¬ Г¤Г Г­Г­Г»Гµ
+#Г±Г®Г§Г¤Г Г­ГЁГҐ ГЈГ°Г ГґГЁГЄГ  Г±Г® Г§Г­Г Г·ГҐГ­ГЁГїГ¬ГЁ Г¤Г ГІГ ГґГ°ГҐГ©Г¬Г 
 ggplot(dataframe, aes(x=spray, y=count, fill=spray, label=rownames(df))) + geom_boxplot(alpha = 0.7, position = position_dodge(1)) + 
-  #подписи графика и осей
+  #ГЇГ®Г¤ГЇГЁГ±ГЁ ГЈГ°Г ГґГЁГЄГ  ГЁ Г®Г±ГҐГ©
   labs(
     title = "Insecticide effectiveness",
     x = "Insecticides",
     y = "Number of surviving insects"
   ) + 
-  theme_fivethirtyeight(base_size = 12 ,  base_family = "sans") + #базовый шрифт и его размер
-  theme(axis.title = element_text())+ #взяли за аргументы все текстовые элементы
-  stat_summary(geom="point", size = 3, color="MidnightBlue") #форма, размер и цвет точек
+  theme_fivethirtyeight(base_size = 12 ,  base_family = "sans") + #ГЎГ Г§Г®ГўГ»Г© ГёГ°ГЁГґГІ ГЁ ГҐГЈГ® Г°Г Г§Г¬ГҐГ°
+  theme(axis.title = element_text())+ #ГўГ§ГїГ«ГЁ Г§Г  Г Г°ГЈГіГ¬ГҐГ­ГІГ» ГўГ±ГҐ ГІГҐГЄГ±ГІГ®ГўГ»ГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ»
+  stat_summary(geom="point", size = 3, color="MidnightBlue") #ГґГ®Г°Г¬Г , Г°Г Г§Г¬ГҐГ° ГЁ Г¶ГўГҐГІ ГІГ®Г·ГҐГЄ
 
 library(ggplot2)
 library(ggthemes)
